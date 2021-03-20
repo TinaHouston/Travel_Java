@@ -37,10 +37,6 @@ public class FlightManager {
         return weightAllowedForPassengers(plane) / plane.getPassengerCapacityFromEnum();
     }
 
-//    public int totalWeightBookedByPassengers(Flight flight, Plane plane) {
-//        return weightAllowedPerPassenger(plane) * flight.passengerCount();
-//    }
-
     public int totalWeightPerBag(Passenger passenger, Plane plane){
         return passenger.getNumberOfBags() * weightAllowedPerPassenger(plane);
     }

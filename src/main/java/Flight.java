@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.time.LocalTime;
 
 public class Flight {
 
@@ -7,15 +8,15 @@ public class Flight {
     private String flightNumber;
     private String destination;
     private String departureAirport;
-    private String departureTime;
+    private LocalTime departureTime;
 
-    public Flight(Plane plane, String flightNumber, String destination, String departureAirport, String departureTime) {
+    public Flight(Plane plane, String flightNumber, String destination, String departureAirport, LocalTime departureTime) {
         this.passengers = new ArrayList<Passenger>();
         this.plane = new Plane(PlaneType.AIRBUSA320);
         this.flightNumber = flightNumber;
         this.destination = destination;
         this.departureAirport = departureAirport;
-        this.departureTime = departureTime;
+        this.departureTime = LocalTime.of(20, 50);
     }
 
     public ArrayList<Passenger> getPassengers() {
@@ -42,7 +43,7 @@ public class Flight {
         return departureAirport;
     }
 
-    public String getDepartureTime() {
+    public LocalTime getDepartureTime() {
         return departureTime;
     }
 

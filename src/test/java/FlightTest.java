@@ -1,6 +1,8 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.time.LocalTime;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
@@ -11,13 +13,14 @@ public class FlightTest {
     Passenger passenger2;
     Passenger passenger3;
     Plane plane;
+    LocalTime departureTime;
 
     @Before
     public void before(){
-        flight = new Flight(plane, "FR756", "GLA", "EDI", "1300");
-        passenger = new Passenger("Tina", 20);
-        passenger2 = new Passenger("Sara", 10);
-        passenger3 = new Passenger("Emily", 5);
+        flight = new Flight(plane, "FR756", "GLA", "EDI", departureTime);
+        passenger = new Passenger("Tina", 20, flight, 28);
+        passenger2 = new Passenger("Sara", 10, flight, 30);
+        passenger3 = new Passenger("Emily", 5, flight, 100);
         plane = new Plane(PlaneType.AIRBUSA320);
     }
 
